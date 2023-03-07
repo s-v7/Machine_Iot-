@@ -1,4 +1,4 @@
-/* uri na qual será direcionada*/
+/* uri na qual serÃ¡ direcionada*/
 const uri = 'api/MachineIot';
 /**/
 let todasMachines = [];
@@ -11,7 +11,7 @@ function getMachinesItems() {
         .cacth(error => console.error('Unable to get ItemsMachine', error));
 }
 
-/**/
+/*function add new Machine*/
 function addItemMachine() {
     const addNameTextbox = document.getElementById('add-name');
 
@@ -32,7 +32,7 @@ function addItemMachine() {
         })
         .catch(error => console.error('Unable to add ItemMachine', error));
 }
-/**/
+/*function Delete one Machine {:id} */
 function deleteItem(id) {
     fetch(`${uri}/${id}`, {
         method: 'DELETE',
@@ -41,7 +41,7 @@ function deleteItem(id) {
         .catch(error => console.error('Unable to the Delete ItemMachine', error));
 
 }
-/**/
+/*function displayEditForm */
 function displayEditForm(id) {
     const itemMachine = todasMachine.find(itemMachine => itemMachine.id === id);
 
@@ -50,7 +50,7 @@ function displayEditForm(id) {
     document.getElementById('edit - isComplete').checked = itemMachine.isComplete;
     document.getElementById('editForm').style.display = 'block';
 }
-/**/
+/*function updateMachine*/
 function updateItemMachine() {
     const itemIdMachine = document.getElementById('edit-id').value;
     const itemMachine = {
@@ -74,17 +74,17 @@ function updateItemMachine() {
 
     return false;
 }
-/**/
+/*function CloseInput*/
 function closeInput() {
     document.getElementById('editForm').style.display = 'none';
 }
-/**/
+/*function _displayCount*/
 function _displayCount(itemMachineCount) {
     const name = (itemMachineCount === 1) ? 'to-do' : 'to-dos';
 
     document.getElementById('counter').innerText = '${itemMachineCount} ${name}';
 }
-/**/
+/*function _displayItemsMachine*/
 function _displayItemsMachine(data) {
     const tBody = document.getElementById('todos');
     tBody.innerHTML = '';
