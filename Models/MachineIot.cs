@@ -22,13 +22,4 @@ public class MachineIot
         get => _secret; 
         set => _secret = value; 
     }
-
-    public MachineIot(string id, string name, bool isComplete, string secret)
-    {
-        this.Id = id;
-        this.Name = name;
-        this.IsComplete = isComplete;
-        this.Secret = secret;
-    }
-
 }
