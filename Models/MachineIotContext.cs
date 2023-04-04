@@ -7,6 +7,7 @@ public class MachineIotContext : DbContext
     public MachineIotContext(DbContextOptions<MachineIotContext> options) : base(options)
     {
     }
+    
+    public DbSet<MachineIot> _machinesIots => Set<MachineIot>();
 
-    public DbSet<MachineIot> machineIots { get; set; }
 }
